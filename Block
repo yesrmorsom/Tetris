@@ -1,0 +1,20 @@
+public class Block
+{
+   private boolean canMove;
+   public Block()
+   {
+    canMove=true;
+    }
+   public boolean canMove()
+   {
+    return canMove;
+    }
+   public void stop()
+   {
+    canMove = false;
+    }
+   public String getString()
+   {
+    return "[x]";
+    }
+}
