@@ -1,0 +1,52 @@
+import java.util.*;
+public class Board
+{
+    private Block[][] board;
+    private Block cur;
+    private boolean running;
+    private Scanner in = new Scanner(System.in);
+    public Board()
+    {
+    board = new Block[20][8];
+    }
+    public void spawn()
+    {
+    cur = new Block();
+    board[0][(int)(Math.random()*8)] = cur;
+    }
+    public void display()
+    {
+    for (int i=0;i<board.length;i++)
+     {
+       for(int j=0;j<board[0].length;j++)
+       {
+        if (board[i][j]==null)
+        {
+         System.out.print("[ ]");
+        }
+        if (board[i][j] instanceof Block)
+        {
+         System.out.print(board[i][j]);
+        }
+        }
+     }
+    }
+    public void run()
+    {
+     running = true;
+     
+     while(running)
+      {
+       spawn();    
+       display();
+       while (cur.canMove())
+       {
+        System.out.println("Enter next Command");
+        String command = in.next();
+        
+        
+        
+        }
+      }
+    }
+}
